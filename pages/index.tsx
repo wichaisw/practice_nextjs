@@ -3,8 +3,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link';
+import MyButton from '../components/MyButton';
 
 const Home: NextPage = () => {
+
+  const onClickMyButton = () => {
+    console.log("clicked");
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,8 +24,8 @@ const Home: NextPage = () => {
         {/* {' '} adds an empty space, which is used to divide text over multiple lines. */}
           Read{' '}
           {/* If you need to add attributes like, for example, className, add it to the a tag, not to the Link tag.  */}
-          <Link href="/posts/first-post">
-            <a>this page!</a>
+          <Link href="/posts/first-post" passHref>
+            <MyButton children={'this page'} onClick={onClickMyButton} />
           </Link>
         </h1>
 

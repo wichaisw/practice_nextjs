@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +15,12 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        {/* {' '} adds an empty space, which is used to divide text over multiple lines. */}
+          Read{' '}
+          {/* If you need to add attributes like, for example, className, add it to the a tag, not to the Link tag.  */}
+          <Link href="/posts/first-post">
+            <a>this page!</a>
+          </Link>
         </h1>
 
         <p className={styles.description}>

@@ -1,5 +1,5 @@
 {
-  "name": "ztm-next-ssr",
+  "name": "next-practice",
   "private": true,
   "scripts": {
     "dev": "next dev",

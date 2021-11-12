@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useState, FunctionComponent } from 'react';
-import Layout from '../../components/Layout';
+import Layout from '../../components/layout';
 
 const FirstPort: FunctionComponent = () => {
 

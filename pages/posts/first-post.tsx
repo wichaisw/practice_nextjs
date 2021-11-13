@@ -1,8 +1,9 @@
 import Head from 'next/head';
+import { NextPage } from 'next';
 import { useState, FunctionComponent } from 'react';
 import Layout from '../../components/layout';
 
-const FirstPort: FunctionComponent = () => {
+const FirstPort: NextPage = () => {
 
   const [onOff, setOnOff] = useState<Boolean>(false);
 

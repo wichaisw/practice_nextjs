@@ -1,12 +1,15 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link';
+import Link from 'next/link'
+import Date from '../components/date'
+
 import MyButton from '../components/myButton';
 import Layout, { siteTitle }  from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import type { IPosts } from '../interface/posts';
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
+
 
 // interface IindexProps {
 //   props?: {
@@ -45,11 +48,11 @@ const Home: NextPage = ({mixedPostsData}: InferGetStaticPropsType<typeof getStat
         <ul className={utilStyles.list}>
           {mixedPostsData.map(({ id, date, title }: IPosts) => (
             <li className={utilStyles.listItem} key={id}>
-              {title}
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
               <br />
-              {id}
-              <br />
-              {date}
+              <Date dateString={date as string} />
             </li>
           ))}
         </ul>
